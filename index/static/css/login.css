@@ -1,0 +1,107 @@
+body,p,h1,h2,h3,h4,h5,h6,ul,ol{
+  margin:0;
+  padding:0;
+}
+
+#container{
+  width:990px;
+  margin:0 auto;
+}
+#container h2{
+  color:#999;
+  border-bottom:1px solid #ccc;
+  font-weight:400;
+  padding-bottom:15px;
+  margin-bottom:30px;
+}
+#login{
+  float:right;
+  margin-top:80px;
+  margin-right:50px;
+}
+#login .form-line{
+  overflow:hidden;
+  margin-bottom:15px;
+}
+#login .form-line>div{
+  float:right;
+  width:300px;
+}
+#login .form-line>p{
+  float:right;
+  margin-right:30px;
+  height:40px;
+  line-height:40px;
+  color:#999;
+}
+#login .form-control{
+  width:300px;
+  height:40px;
+  border:1px solid #ccc;
+  /*
+    元素width=内容宽度+左右border+左右padding
+    元素height=内容高度+上下border+上下padding
+  */
+  box-sizing:border-box;
+  outline:none;
+  padding-left:15px;
+}
+#login p.anchor{
+  float:right;
+}
+/*可有可无*/
+#login p.saved{
+  float:left;
+}
+#login p.anchor a{
+  color:#999;
+}
+#login p.saved input{
+  width:16px;
+  height:16px;
+  /*
+    垂直对齐:控制当前元素两端文本相对于当前元素的垂直对齐方式
+    top:顶部对齐
+    middle:居中对齐
+    bottom:底部对齐
+    baseline:基线对齐
+  */
+  vertical-align:middle;
+}
+#login div.form-line a.goReg{
+  float:right;
+  color:#A6BB9A;
+  text-decoration:none;
+}
+#login div.form-line a.goReg,#login div.form-line .btnLogin{
+  /*宽度,高度,边框,边框倒角,文本水平居中对齐,行高,文字大小*/
+  width:146px;
+  height:40px;
+  border:1px solid #7A8F66;
+  border-radius:5px;
+  text-align:center;
+  line-height:40px;
+  font-size:18px;
+}
+#login div.form-line .btnLogin{
+  background-color:#65A130;
+  color:#fff;
+}
+#img{
+  position:relative;
+  width:500px;
+}
+#img>a{
+  position:absolute;
+  bottom:25px;
+  left:172px;
+  width:156px;
+  height:50px;
+  border:1px solid #7A8F66;
+  border-radius:5px;
+  text-align:center;
+  line-height:50px;
+  font-size:18px;
+  color:#A6BB9A;
+  text-decoration:none;
+}

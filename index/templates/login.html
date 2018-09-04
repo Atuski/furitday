@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>
+    {% block title %}
+      天天果园-登录
+    {% endblock %}
+  </title>
+  <link rel="stylesheet" href="/static/css/login.css">
+  {% block style %}
+  {% endblock %}
+  {% block js %}
+  {% endblock %}
+</head>
+<body>
+  <div id="container">
+    <h2>
+    {% block topic %}
+      会员登录
+    {% endblock %}
+    </h2>
+    <div id="content">
+      <!--右:登录内容 -->
+      <div id="login">
+        {% block form %}
+          <form action="/login/" method="post">
+            {% csrf_token %}
+            <!--1.手机号-->
+            {% for field in form %}
+              <div class="form-line">
+                <div>
+                  {{field}}
+                </div>
+                <p>{{field.label}}</p>
+              </div>
+            {% endfor %}
+            {% comment %}
+            <div class="form-line">
+              <!--div:承装文本框-->
+              <div>
+                <input type="text" name="uphone" class="form-control">
+              </div>
+              <!--p:提示文字-->
+              <p>手机号</p>
+            </div>
+            <!--2.密码-->
+            <div class="form-line">
+              <!--div:承装文本框-->
+              <div>
+                <input type="password" name="upwd" class="form-control">
+              </div>
+              <!--p:提示文字-->
+              <p>密码</p>
+            </div>
+            {% endcomment %}
+            <!--3.记住密码-->
+            <div class="form-line">
+              <div>
+                <p class="anchor">
+                  <a href="#">忘记密码?</a>
+                  <a href="#">快捷登录</a>
+                </p>
+                <p class="saved">
+                  <input type="checkbox" name="isSaved">记住密码
+                </p>
+              </div>
+            </div>
+            <!--4.登录&会员注册-->
+            <div class="form-line">
+              <div>
+                <a href="{% url 'register' %}" class="goReg">会员注册</a>
+                <input type="submit" value="登录" class="btnLogin">
+              </div>
+            </div>
+          </form>
+        {% endblock %}
+      </div>
+      <!--左:登录图片 -->
+      <p id="img">
+        <img src="/static/images/huiyuan.jpg" alt="">
+        {% block a %}
+          <a href="{% url 'register' %}">会员注册</a>
+        {% endblock %}
+      </p>
+    </div>
+  </div>
+</body>
+</html>

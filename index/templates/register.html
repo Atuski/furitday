@@ -1,0 +1,83 @@
+{% extends 'login.html' %}
+{% load static %}
+
+{% block title %}
+  天天果园-注册
+{% endblock %}
+{% block style %}
+  <style>
+    #login{
+      margin-top:40px;
+    }
+  </style>
+{% endblock %}
+{% block topic %}
+  注册会员
+{% endblock %}
+
+{% block form %}
+  <form action="/register/" method="post" id="formReg">
+    {% csrf_token %}
+    <!--1.手机号-->
+    <div class="form-line">
+      <!--div:承装文本框-->
+      <div>
+        <input type="text" name="uphone" class="form-control" id="uphone">
+        <p id="uphone-show">{{errMsg}}</p>
+      </div>
+      <!--p:提示文字-->
+      <p>手机号</p>
+    </div>
+    <!--2.密码-->
+    <div class="form-line">
+      <!--div:承装文本框-->
+      <div>
+        <input type="password" id="upwd" name="upwd" class="form-control">
+      </div>
+      <!--p:提示文字-->
+      <p>密码</p>
+    </div>
+    <!--3.确认密码-->
+    <div class="form-line">
+      <!--div:承装文本框-->
+      <div>
+        <input type="password" id="upwd2" class="form-control">
+        <p id="uphone-upwd"></p>
+      </div>
+      <!--p:提示文字-->
+      <p>确认密码</p>
+    </div>
+    <!--4.用户名称-->
+    <div class="form-line">
+      <!--div:承装文本框-->
+      <div>
+        <input type="text" name="uname" class="form-control" value="{{uname}}">
+      </div>
+      <!--p:提示文字-->
+      <p>用户名称</p>
+    </div>
+    <!--5.邮箱-->
+    <div class="form-line">
+      <!--div:承装文本框-->
+      <div>
+        <input type="email" name="uemail" class="form-control" value="{{uemail}}">
+      </div>
+      <!--p:提示文字-->
+      <p>邮箱</p>
+    </div>
+    <!--6.注册&会员登录-->
+    <div class="form-line">
+      <div>
+        <a href="{% url 'login' %}" class="goReg">会员登录</a>
+        <input type="submit" value="注册" class="btnLogin">
+      </div>
+    </div>
+  </form>
+{% endblock %}
+{% block a %}
+  <a href="{% url 'login' %}">会员登录</a>
+{% endblock %}
+{% block js %}
+  <script src='/static/js/jquery-1.11.3.js'></script>
+  <script src='/static/js/register.js'></script>
+{% endblock %}
